@@ -1,0 +1,280 @@
+/* Reseteo Moderno*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: "inter", sans-serif;
+    background: #f7f7fb;
+    color: #2a2a2a;
+    line-height: 1.6;
+
+}
+
+/* Variables de color */
+
+:root {
+    --color-primary:      #6c63ff;
+    --color-primary-dark: #5147e0;
+    --color-accent:       #00c2ff;
+    --color-text:         #222;
+    --color-muted:        #666;
+    --color-bg:           #ffffff;
+    --color-bg-light:     #f2f2f7;
+
+    --radius:     14px;
+    --transition: 0.25s ease-in-out;
+
+}
+
+/*Contenedores */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+}
+
+/* Navbar */
+.header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: var(--transition);
+
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+
+}
+
+/* Secciones */
+section {
+    padding: 80 px 0;
+
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-primary-dark);
+
+}
+
+/* Home */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding-top: 120px;
+
+}
+
+.home-text {
+    flex: 1;
+
+}
+
+.home-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+
+}
+
+.home-text .accent {
+    color: var(--color-primary);
+
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: 15px;
+
+}
+
+.home-text p {
+    margin-bottom: 20px;
+    color: #333;
+
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+}
+
+.btn {
+    background: var(--color-primary);
+    color: #fff;
+
+}
+
+.btn:hover {
+    background: var(--color-primary-dark);
+
+}
+
+.btn-secondary {
+    background: #eaeafd;
+    color: var(--color-primary-dark);
+}
+
+.btn-secondary:hover {
+    background: #d3d3ff;
+
+}
+
+.home-img {
+    width: 270px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+
+}
+
+/* Sobre mí*/
+.about-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+
+}
+
+/*Contacto*/
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+}
+
+.contact-links a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: var(--transition);
+
+}
+
+.contact-links a:hover {
+    color: var(--color-primary-dark);
+
+}
+
+/*Footer */
+.footer {
+    text-align: center;
+    padding: 25px 0;
+    color: #666;
+    font-size: 0.9rem;
+
+}
+
+/*Animaciones*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsibilidad*/
+@media (max-width: 900px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+
+    }
+    .home-img {
+        width: 190px;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 1.1rem;
+
+    }
+
+    .nav-links {
+        gap: 15px;
+
+    }
+
+    .home-text h2 {
+        font-size: 2rem;
+
+    }
+}
+
+/* Animaciones con scroll */
+.scroll-anim {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s ease;
+}
+
+.scroll-anim.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}

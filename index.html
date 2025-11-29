@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Urbina | Portafolio</title>
+
+    <!-- Uso del CSS global -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Uso de los CSS especificos -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/proyectos.css">
+    <link rel="stylesheet" href="css/contacto.css">
+
+</head>
+
+
+<body>
+
+    <!-- Uso de navbar moderno -->
+    <header class="header">
+        <nav class="navbar container">
+            <h1 class="logo">Felipe Urbina</h1>
+
+            <ul class="nav-links">
+                <li><a href="home">     Inicio     </a></li>
+                <li><a href="about">    Sobre Mí   </a></li>
+                <li><a href="projects"> Proyectos  </a></li>
+                <li><a href="contact">  Contacto   </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Presentación -->
+     <section id="home" class="home container fade-in">
+        <div class="home-text">
+
+            <h2>Hola, soy <span class="accent">Felipe Urbina</span></h2>
+            <h3 class="subtitle">Ingeniero en Informática | Desarrollador Web</h3>
+
+            <p>
+                Apasionado por desarrollar y optimizar soluciones digitales modernas,
+                especializado en Cloud y desarrollo web.
+            </p>
+
+            <div class="hero-buttons scroll-anim">
+
+                <a href="#projects" class="btn">Ver proyectos</a>
+                <a href="assets/pdf/cv.pdf" target="_blank" class="btn-secondary">Descargar CV</a>
+
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="assets/img/profile.png" alt="Foto de perfil">
+        </div>
+     </section>
+
+     <!-- Sobre mí -->
+      <section id="about" class="about container fade-in">
+            <h2 class="section-title scroll-anim">Sobre Mí</h2>
+            <p class="about-text scroll-anim">
+                Soy ingeniero en informática con experiencia en distintos proyectos,
+                desde proyectos web en mi educación superior como mi “proyecto de título” 
+                hasta cargos más avanzados en área de CLOUD, como, por ejemplo: 
+                SRE, Sys Admin y DevOps en Azure con entornos críticos.
+            </p>
+      </section>
+
+      <!-- Proyectos -->
+       <section id="projects" class="projects-grid">
+            <h2 class="section-title scroll-anim">Proyectos</h2>
+
+
+            <div id="projectsGrid" class="projects-grid scroll-anim">
+
+                <!-- Los proyectos vendran desde proyectos.js -->
+            </div>
+       </section>
+
+       <!-- Contactos -->
+        <section id="contact" class="contact container fade-in">
+            <h2 class="section-title scroll-anim">Contacto</h2>
+
+            <div class="contact-links scroll-anim">
+                <a href="mailto:felipeurbi@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/felipe-urbina-basualto" target="_blank">LinkedIn</a>
+                <a href="https://github.com/chokomota" target="_blank">GitHub</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+         <footer class="footer">
+            <p> 2025 Felipe Urbina | Portafolio Web.</p>
+         </footer>
+
+         <!-- Scripts -->
+        <script src="js/main.js"></script>
+        <script src="js/proyectos.js"></script>
+
+
+</body>
+</html>

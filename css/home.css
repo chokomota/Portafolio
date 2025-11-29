@@ -1,0 +1,121 @@
+/* Home Principal*/
+.home-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(
+        135deg,
+        #e4f0ff 0%,
+        #f2e8ff 100%
+    );
+    animation: fadeIn 1.5s ease-in-out forwards;
+
+}
+
+.home-hero h1 {
+    font-size: 3.2rem;
+    color: #1a1a1a;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+
+}
+
+.home-hero h1 span {
+    color: #6aa9ff;
+
+}
+
+.home-hero p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 700px;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 0.2;
+    
+}
+
+.home-btns {
+    margin-top: 35px;
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 0.4s;
+
+}
+
+.home-btns a {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3;
+
+}
+
+.home-btns .btn-primary {
+    background: #6aa9ff;
+    color:      white;
+    font-weight: 600;
+
+}
+
+.home-btns .btn-primary:hover {
+    background: #5c93dd;
+
+}
+
+.home-btns .btn-outline {
+    border: 2px solid #6aa9ff;
+    color:            #6aa9ff;
+    font-weight: 600;
+
+}
+
+.home-btns .btn-outline:hover {
+    background: #6aa9ff;
+    color:      white;
+
+}
+
+/*Scroll down icono*/
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    font-size: 1rem;
+    color: #6aa9ff;
+    animation: bound 1.8 infinite;
+
+}
+
+/*Animaciones*/
+@keyframes slideUp {
+    from {
+        transform: translateY(25px);
+        opacity: 0;
+
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+
+}
+
+@keyframes bounce {
+    0%, 100% {transform: translateY(0);}
+    50%      {transform: translateY(-8px);}
+
+}
+
+@keyframes fadeIn {
+    from    {opacity: 0;}
+    to      {opacity: 1;}
+}
