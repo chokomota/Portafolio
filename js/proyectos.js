@@ -1,66 +1,53 @@
-/*Lista de proyectos*/
+/*Lista de proyectos (editable)*/
 const proyectos = [
     {
-        titulo: "Sistema de Gestión de Usuarios",
-        descripcion: "Plataforma web full-stack para administrar usuarios, roles y permisos.",
+        titulo: "Portafolio Web",
+        descripcion: "Página web personal creada con HTML, CSS y JavaScript puro.",
         imagen: "assets/img/proyecto1.png",
-        tecnologias: ["JavaScript", "HTML", "CSS", "Python", "Django"],
-        linkDemo: "#",      //enlace a demo
-        linkCodigo: "#"     //enlace a GitHub
+        link: "https://github.com/chokomota/Portafolio"
     },
+
     {
-        titulo: "E-Commerce Minimalista",
-        descripcion: "Tienda online con carrito persistente y panel administrativo.",
+        titulo: "ejemplo 2",
+        descripcion: "miau",
         imagen: "assets/img/proyecto2.png",
-        tecnologias: ["JavaScript", "CSS", "Node.js", "Express", "MongoDB"],
-        linkDemo: "#",
-        linkCodigo: "#"
-    },
-    {
-        titulo: "App de Tareas con LocalStorage",
-        descripcion: "Aplicación liviana para gestionar tareas con guardado local.",
-        imagen: "assets/img/proyecto3.png",
-        tecnologias: ["HTML", "CSS", "JavaScript"],
-        linkDemo: "#",
-        linkCodigo: "#"
+        link: "https://github.com/usuario/sistema"
     }
 ];
 
 
-/*Crear tarjetas dinamicamente*/
-function cargarProyectos() {
-    const grid = document.getElementById("projectsGrid");
+/*Referencia al contenedor*/
+const contenedorProyectos = document.getElementById("proyectos-container");
 
-    proyectos.forEach(p => {
 
+/*Generación dinámica de tarjetas
+*/
+function mostrarProyectos() {
+
+    proyectos.forEach((proyecto) => {
+
+        // Crear la tarjeta general
         const card = document.createElement("div");
-        card.classList.add("project-card", "scroll-anim");
+        card.classList.add("proyecto-card");
 
+        // Insertar estructura interna
         card.innerHTML = `
-            <div class="project-img">
-                <img src="${p.imagen}" alt="${p.titulo}">
+            <div class="proyecto-img">
+                <img src="${proyecto.imagen}" alt="${proyecto.titulo}">
             </div>
 
-            <div class="project-info">
-                <h3>${p.titulo}</h3>
-                <p>${p.descripcion}</p>
-
-                <div class="tech-list">
-                    ${p.tecnologias.map(t => `<span>${t}</span>`).join("")}
-                </div>
-
-                <div class="project-buttons">
-                    <a href="${p.linkDemo}" target="_blank" class="btn-demo">Ver Demo</a>
-                    <a href="${p.linkCodigo}" target="_blank" class="btn-code">Código</a>
-                </div>
+            <div class="proyecto-info">
+                <h3>${proyecto.titulo}</h3>
+                <p>${proyecto.descripcion}</p>
+                <a href="${proyecto.link}" target="_blank" class="btn-proyecto">Ver proyecto</a>
             </div>
         `;
 
-        grid.appendChild(card);
+        // Agregar la tarjeta al contenedor
+        contenedorProyectos.appendChild(card);
     });
 }
 
 
-
-/*Ejecutar funcion*/ 
-document.addEventListener("DOMContentLoaded", cargarProyectos);
+/*Inicialización*/
+mostrarProyectos();

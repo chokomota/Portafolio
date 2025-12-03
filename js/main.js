@@ -1,88 +1,61 @@
-/*Scroll suave entre secciones*/
+/* ===============================
+   Scroll suave para links del header
+   =============================== */
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function(e) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (!target) return;
+    link.addEventListener("click", e => {
+        const destino = document.querySelector(link.getAttribute("href"));
+        if (destino) {
+            e.preventDefault();
+            destino.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    });
+});
 
-        e.preventDefault();
-        window.scrollTo({
-            top: target.offsetTop - 70,
+
+/* ===============================
+   Botones de la sección Home
+   =============================== */
+
+// Botón "Sobre mí"
+const btnSobreMi = document.getElementById("btnSobreMi");
+if (btnSobreMi) {
+    btnSobreMi.addEventListener("click", () => {
+        document.querySelector("#about").scrollIntoView({
             behavior: "smooth"
         });
     });
-});
+}
 
-
-/*Navbar = resaltar seccion activa*/
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(sec => {
-        const sectionTop = sec.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = sec.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
-});
-
-
-/*Animacion al hacer sctroll (Fade + slide)*/
-
-const scrollElements = document.querySelectorAll(".scroll-anim");
-
-const elementInView = (el, offset = 120) => {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= (window.innerHeight - offset);
-};
-
-const displayScrollElement = el => {
-    el.classList.add("scrolled");
-};
-
-const hideScrollElement = el => {
-    el.classList.remove("scrolled");
-};
-
-const handleScrollAnimation = () => {
-    scrollElements.forEach(el => {
-        if (elementInView(el)) {
-            displayScrollElement(el);
-        } else {
-            hideScrollElement(el);
-        }
-    });
-};
-
-window.addEventListener("scroll", handleScrollAnimation);
-
-
-/*Boton de scroll down del home*/
-
-const scrollDownBtn = document.querySelector(".scroll-down");
-if (scrollDownBtn) {
-    scrollDownBtn.addEventListener("click", () => {
-        const aboutSection = document.querySelector("#sobre-mi");
-        if (aboutSection) {
-            window.scrollTo({
-                top: aboutSection.offsetTop - 60,
-                behavior: "smooth"
-            });
-        }
+// Botón "Ver Proyectos"
+const btnVerProyectos = document.getElementById("btnVerProyectos");
+if (btnVerProyectos) {
+    btnVerProyectos.addEventListener("click", () => {
+        document.querySelector("#proyectos").scrollIntoView({
+            behavior: "smooth"
+        });
     });
 }
 
 
-/*Ready message (debugging)*/
-console.log("main.js cargado correctamente.");
+/* ===============================
+   Efecto básico de aparición al hacer scroll
+   =============================== */
+
+const elementos = document.querySelectorAll("section, .home-content, .home-img");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, { threshold: 0.2 });
+
+elementos.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "0.6s ease";
+    observer.observe(el);
+});

@@ -3,101 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felipe Urbina | Portafolio</title>
+    <title>Portafolio - Felipe Urbina</title>
 
-    <!-- Uso del CSS global -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Uso de los CSS especificos -->
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/proyectos.css">
-    <link rel="stylesheet" href="css/contacto.css">
-
 </head>
-
-
 <body>
 
-    <!-- Uso de navbar moderno -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
-        <nav class="navbar container">
-            <h1 class="logo">Felipe Urbina</h1>
+        <div class="header-logo">
+            <h2>Felipe Urbina</h2>
+        </div>
 
-            <ul class="nav-links">
-                <li><a href="home">     Inicio     </a></li>
-                <li><a href="about">    Sobre Mí   </a></li>
-                <li><a href="projects"> Proyectos  </a></li>
-                <li><a href="contact">  Contacto   </a></li>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#about" class="nav-link">Sobre mí</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="assets/pdf/CV_base.pdf" download class="btn-cv">Descargar CV</a></li>
             </ul>
         </nav>
     </header>
-    
-    <!-- Presentación -->
-     <section id="home" class="home container fade-in">
-        <div class="home-text">
 
-            <h2>Hola, soy <span class="accent">Felipe Urbina</span></h2>
-            <h3 class="subtitle">Ingeniero en Informática | Desarrollador Web</h3>
+    <!-- ================= SECCIÓN HOME ================= -->
+    <section id="home" class="home">
+        <div class="home-content">
+            <h1 class="title">Hola, soy <span>Felipe Urbina</span></h1>
+            <p class="subtitle">Desarrollador Web | Ingeniero en Informática</p>
+
+            <div class="home-buttons">
+                <button id="btnSobreMi" class="btn-primary">Sobre mí</button>
+                <button id="btnVerProyectos" class="btn-secondary">Ver Proyectos</button>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <img src="assets/img/perfil.png" alt="Foto de perfil">
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN SOBRE MÍ ================= -->
+    <section id="about" class="about section">
+        <h2 class="section-title">Sobre mí</h2>
+
+        <div class="about-content">
+            <p>
+                Soy un ingeniero en informática apasionado por el desarrollo web, 
+                la tecnología y la creación de soluciones eficientes.
+            </p>
 
             <p>
-                Apasionado por desarrollar y optimizar soluciones digitales modernas,
-                especializado en Cloud y desarrollo web.
+                Me especializo en diseño, desarrollo y optimización de páginas web,
+                trabajando con HTML, CSS, JavaScript y metodologías modernas.
             </p>
-
-            <div class="hero-buttons scroll-anim">
-
-                <a href="#projects" class="btn">Ver proyectos</a>
-                <a href="assets/pdf/cv.pdf" target="_blank" class="btn-secondary">Descargar CV</a>
-
-            </div>
         </div>
-        <div class="home-img">
-            <img src="assets/img/profile.png" alt="Foto de perfil">
+    </section>
+
+    <!-- ================= SECCIÓN PROYECTOS ================= -->
+    <section id="proyectos" class="projects section">
+        <h2 class="section-title">Proyectos</h2>
+
+        <div id="proyectos-container" class="projects-container">
+            <!-- proyectos.js insertará tarjetas dinámicamente -->
         </div>
-     </section>
+    </section>
 
-     <!-- Sobre mí -->
-      <section id="about" class="about container fade-in">
-            <h2 class="section-title scroll-anim">Sobre Mí</h2>
-            <p class="about-text scroll-anim">
-                Soy ingeniero en informática con experiencia en distintos proyectos,
-                desde proyectos web en mi educación superior como mi “proyecto de título” 
-                hasta cargos más avanzados en área de CLOUD, como, por ejemplo: 
-                SRE, Sys Admin y DevOps en Azure con entornos críticos.
-            </p>
-      </section>
+    <!-- ================= SECCIÓN CONTACTO ================= -->
+    <section id="contacto" class="contact section">
+        <h2 class="section-title">Contacto</h2>
 
-      <!-- Proyectos -->
-       <section id="projects" class="projects-grid">
-            <h2 class="section-title scroll-anim">Proyectos</h2>
+        <div class="contact-content">
+            <p>Si deseas comunicarte conmigo, aquí tienes mis medios de contacto:</p>
 
+            <ul class="contact-list">
+                <li><strong>Email:</strong> felipeurbi@gmail.com</li>
+                <li><strong>LinkedIn:</strong> linkedin.com/in/felipe-urbina-basualto</li>
+                <li><strong>Teléfono:</strong> +56 9 6343 9399</li>
+            </ul>
+        </div>
+    </section>
 
-            <div id="projectsGrid" class="projects-grid scroll-anim">
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>© 2025 - Portafolio creado por Felipe Urbina</p>
+    </footer>
 
-                <!-- Los proyectos vendran desde proyectos.js -->
-            </div>
-       </section>
-
-       <!-- Contactos -->
-        <section id="contact" class="contact container fade-in">
-            <h2 class="section-title scroll-anim">Contacto</h2>
-
-            <div class="contact-links scroll-anim">
-                <a href="mailto:felipeurbi@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/felipe-urbina-basualto" target="_blank">LinkedIn</a>
-                <a href="https://github.com/chokomota" target="_blank">GitHub</a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-         <footer class="footer">
-            <p> 2025 Felipe Urbina | Portafolio Web.</p>
-         </footer>
-
-         <!-- Scripts -->
-        <script src="js/main.js"></script>
-        <script src="js/proyectos.js"></script>
-
+    <!-- ================= SCRIPTS ================= -->
+    <script src="js/proyectos.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
