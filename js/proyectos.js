@@ -39,7 +39,9 @@ function mostrarProyectos() {
             <div class="proyecto-info">
                 <h3>${proyecto.titulo}</h3>
                 <p>${proyecto.descripcion}</p>
-                <a href="${proyecto.link}" target="_blank" class="btn-proyecto">Ver proyecto</a>
+                <button class="btn-proyecto" onclick="openModal(${proyectos.indexOf(proyecto)})">
+                    Ver más
+                </button>
             </div>
         `;
 
